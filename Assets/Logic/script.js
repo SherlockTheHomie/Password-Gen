@@ -1,65 +1,83 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-let selectedArrays
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-let lowerCase =  ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-let upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-let numBers = [`0`,`1`,`2`,`3`,`4`,`5`,`6`,`7`,`8`,`9`]
-let specialChar = [`"`,` `,`!`,`"`,`#`,`$`,`%`,`&`,`'`,`(`,`)`,`*`,`+`,`,`,`-`,`.`,`:`,`;`,`<`,`=`,`>`,`?`,`@`,`[`,`]`,`^`,`_`,`{`,`|`,`}`,`~`]
+let lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
+let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+let numBers = "1234567890".split("");
+let specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~".split("");
 
-function generatePassword(params) {
-  
-}
-let randomNumber = Math.floor(Math.random()*computerChoices.length)
-console.log(randomNumber)
-
-for (let i = 0; index < array.length; index++) {
-  password = array[i];
-  
-}
-
-if (selectedArrays === ) {
-  
-}
+let selectedArrays = [];
 
 
-let lowerAlpha = [];
-let upperAlpha = [];
-let numBer = [];
-let specChar = [];
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-function myFunction() {
-  // Get the checkbox
 let upBox = document.getElementById("Uppercase");
 let lwBox = document.getElementById("Lowercase");
 let nmBox = document.getElementById("Numbers");
 let spBox = document.getElementById("Specialchars");
+let passwordLength = document.getElementById("PasswordLength");
 
-if (upBox.checked === true){
-    upperAlpha = true;
-    if (lwBox.checked === true)
-    lowerAlpha = true;
-    if (nmBox.checked === true)
-    numBer = true;
-    if (spBox.checked === true)
-    SpecChar = true; 
-  }
+concatArrays();
 
-  
-}  
-  {
-    text.style.display = "none";
-  }
+function concatArrays() {  
+  if (upBox.checked && lwBox.checked && nmBox.checked && spBox.checked === false) {
+        alert("Please select at least one character type to generate your password");
+        return;
+} if (lwBox.checked === true) {
+     selectedArrays = selectedArrays.concat(lowerCase);
+} if (upBox.checked === true) {
+     selectedArrays = selectedArrays.concat(upperCase);
+} if (nmBox.checked === true) {
+     selectedArrays = selectedArrays.concat(numBers);
+} if (spBox.checked === true) {
+     selectedArrays = selectedArrays.concat(specialChar);
+  } 
+  return selectedArrays;
 }
+
+function generatePassword() {
+  randomArray = [];
+  for (let i = 0; i < passwordLength.valueAsNumber; i++) {
+      let randomNumber = Math.floor(Math.random()*selectedArrays.length);
+      randomArray = randomArray.concat(selectedArrays[randomNumber]);
+  }
+  return randomArray.join('');
+}
+
+generateBtn.addEventListener("click", writePassword);
+
+// if (selectedArrays === ) {
+  // }
+
+
+
+
+// Add event listener to generate button
+
+
+
+  // Get the checkbox
+
+
+// I did this first, even though Thomas said it was making more work.
+// if (upBox.checked === true) {
+//     upperAlpha = true;
+//   if (lwBox.checked === true)
+//     lowerAlpha = true;
+//   if (nmBox.checked === true)
+//     numBer = true;
+//   if (spBox.checked === true)
+//     specChar = true;
+// let lowerAlpha = [];
+// let upperAlpha = [];
+// let numBer = [];
+// let specChar = [];
+//     return 
+//   }  
+// }
