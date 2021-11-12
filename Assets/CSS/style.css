@@ -13,7 +13,7 @@ body,
 }
 
 body {
-  font-family: sans-serif;
+  font-family:monospace;
   background-color: #f9fbfd;
 }
 
@@ -22,7 +22,10 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-
+h1 {
+  font-size: 36px;
+  text-shadow: 1px 1px 5px rgb(74, 74, 255);
+}
 header {
   text-align: center;
   padding: 20px;
@@ -74,16 +77,16 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(68, 75, 184);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 8px 6px 8px rgba(0, 0, 0, 0.2) 9px 8px 20px
     0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 22px;
   margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+  padding: 12px 28px;
   text-align: center;
   cursor: pointer;
 }

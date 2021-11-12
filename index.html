@@ -26,6 +26,7 @@
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
+          <br></br>
           <input type="checkbox" id="Uppercase" value=""> 
           <Label for="Uppercase">Uppercase</Label>
           <input type="checkbox" id="Lowercase" value=""> 
@@ -34,8 +35,11 @@
           <Label for="Numbers">Numbers</Label>
           <input type="checkbox" id="Specialchars" value=""> 
           <Label for="Specialchars">Special Character</Label>
-          <input type="number" id="PasswordLength" value="">
+          <br></br>
+        <form>
+          <input type="number" id="PasswordLength" min="8" max="128">
           <label for="Password Length">Please choose the length of your desired password between 8 and 128</label>
+        </form>
         </div>
       </div>
     </div>
